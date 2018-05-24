@@ -6,23 +6,23 @@
 #define FOT_UTILITY_H
 
 using namespace std;
-
-string GetStdoutFromCommand(string cmd) {
-
-    string data;
-    FILE * stream;
-    const int max_buffer = 256;
-    char buffer[max_buffer];
-    cmd.append(" 2>&1");
-
-    stream = popen(cmd.c_str(), "r");
-    if (stream != nullptr) {
-        while (feof(stream) == 0)
-            if (fgets(buffer, max_buffer, stream) != nullptr) data.append(buffer);
-        pclose(stream);
-    }
-    return data;
-}
+string months[13] = {"0","January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+//string GetStdoutFromCommand(string cmd) {
+//
+//    string data;
+//    FILE * stream;
+//    const int max_buffer = 256;
+//    char buffer[max_buffer];
+//    cmd.append(" 2>&1");
+//
+//    stream = popen(cmd.c_str(), "r");
+//    if (stream != nullptr) {
+//        while (feof(stream) == 0)
+//            if (fgets(buffer, max_buffer, stream) != nullptr) data.append(buffer);
+//        pclose(stream);
+//    }
+//    return data;
+//}
 // Function for calculating median
 double findMedian(vector<double> a)
 {
